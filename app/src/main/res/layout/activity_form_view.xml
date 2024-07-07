@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ishaanbhela.aftercovidtracker.FormView">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"
+        android:background="#FFFFF0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Demographic Data -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Demographic Data"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name of the Patient"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/locality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Locality/Residence"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/contact_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact Number"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/diabetic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diabetic"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/hypersensitive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hypersensitive"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/cad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Coronary Artery Disease"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/years_of_suffering"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Years of suffering from Diabetes/Hypertension"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Mild Symptoms of Post COVID Complications -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mild Symptoms of Post COVID Complications"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/cough_alone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cough alone"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/chronic_fatigue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chronic fatigue after recovery from the COVID-19 infection"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/nausea_loss_appetite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nausea and Loss of appetite"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/abdominal_discomfort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Abdominal Discomfort"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Moderate Symptoms of Post COVID Complications -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moderate Symptoms of Post COVID Complications"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/cough_with_breathlessness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Cough with Breathlessness"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/restlessness_sweating_numbness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Restlessness, Sweating, and Numbness in extremities"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Severe Symptoms of Post COVID Complications -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Severe Symptoms of Post COVID Complications"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/severe_cough_with_breathlessness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cough with Breathlessness"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/chest_pain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chest Pain, and Breathlessness with Palpitations"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/confusion_thoughts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confusion with thoughts"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/foggy_thoughts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Foggy thoughts"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/dizziness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dizziness"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/heart_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Heart Rate"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/respiratory_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Respiratory Rate"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/spo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SpO2"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/AdviseHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Advise"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/advise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="#666362"
+                android:layout_marginBottom="16dp"
+                android:text=""/>
+
+            <Button
+                android:id="@+id/submitAdvise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Advise"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/black"
+                android:textSize="20sp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
