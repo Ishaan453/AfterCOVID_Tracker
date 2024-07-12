@@ -8,6 +8,7 @@
         android:id="@+id/articleVideo"
         android:layout_width="150dp"
         android:layout_height="100dp"
+        android:layout_marginHorizontal="10dp"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

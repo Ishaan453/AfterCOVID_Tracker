@@ -218,6 +218,7 @@ public class formFill extends AppCompatActivity {
         data.put("Advised", "false");
         data.put("Advise", "");
         data.put("UserID", Objects.requireNonNull(auth.getCurrentUser()).getUid());
+        data.put("AdviseGivenBy", "");
 
         db.collection("Forms")
                 .add(data)

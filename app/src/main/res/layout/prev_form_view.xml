@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="8dp"
-    android:id="@+id/prevFormLayout">
+    android:id="@+id/prevFormLayout"
+    android:layout_marginHorizontal="10dp"
+    android:background="@drawable/prev_forms_background">
 
     <ImageView
         android:id="@+id/imageViewItem"

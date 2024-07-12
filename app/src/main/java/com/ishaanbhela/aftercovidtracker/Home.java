@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -40,6 +41,7 @@ public class Home extends AppCompatActivity implements prevFormItemAdapter.OnIte
     private RecyclerView videos;
     private Button signOut;
     private ActivityResultLauncher<Intent> activityResultLauncher;
+    FloatingActionButton contactUs;
 
     private TextView selfAssess;
     List<prevFormModel> formItemList = new ArrayList<>();
@@ -57,6 +59,8 @@ public class Home extends AppCompatActivity implements prevFormItemAdapter.OnIte
         articles = findViewById(R.id.ArticleList);
         videos = findViewById(R.id.VideoList);
         signOut = findViewById(R.id.signOutBtn);
+        contactUs = findViewById(R.id.contactUs);
+
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         fetchUserName();
@@ -65,28 +69,12 @@ public class Home extends AppCompatActivity implements prevFormItemAdapter.OnIte
         // Setting Previous Form Adapters
         prevForms.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         FetchPreviousForms();
-//        CollectionReference colRef = db.collection("Forms");
-//        Query query = colRef.whereEqualTo("UserID", auth.getCurrentUser().getUid());
-//        query.get().addOnCompleteListener(task -> {
-//            if (task.isSuccessful()) {
-//                for (QueryDocumentSnapshot document : task.getResult()) {
-//                    String MonthYear = document.getString("MonthYear");
-//                    formItemList.add(new prevFormModel(MonthYear, document.getId()));
-//                }
-//                prevFormItemAdapter formItemAdapter = new prevFormItemAdapter(formItemList, this);
-//                prevForms.setAdapter(formItemAdapter);
-//            }
-//        });
 
         articles.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        articlesModelList.add(new ArticlesModel("https://www.healthline.com/health/coronavirus-prevention", "https://i.imgur.com/qz7Uh7p.png"));
-        ArticlesAdapter articlesAdapter = new ArticlesAdapter(articlesModelList, this);
-        articles.setAdapter(articlesAdapter);
+        FetchArticles();
 
         videos.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        videoModelList.add(new VideoModel("https://www.youtube.com/watch?v=FC4soCjxSOQ&pp=ygUWY29yb25hdmlydXMgcHJldmVudGlvbg%3D%3D", "https://i.imgur.com/4rYIo7V.png"));
-        VideosAdapter videosAdapter = new VideosAdapter(videoModelList, this);
-        videos.setAdapter(videosAdapter);
+        FetchVideos();
 
 
         selfAssess.setOnClickListener(v -> {
@@ -131,6 +119,12 @@ public class Home extends AppCompatActivity implements prevFormItemAdapter.OnIte
                     }
                 }
         );
+
+        contactUs.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + "1234567890"));
+            startActivity(intent);
+        });
     }
 
     public void fetchUserName(){
@@ -181,7 +175,6 @@ public class Home extends AppCompatActivity implements prevFormItemAdapter.OnIte
 
 
     public void FetchPreviousForms(){
-        formItemList.clear();
         CollectionReference colRef = db.collection("Forms");
         Query query = colRef.whereEqualTo("UserID", auth.getCurrentUser().getUid());
         query.get().addOnCompleteListener(task -> {
@@ -194,5 +187,37 @@ public class Home extends AppCompatActivity implements prevFormItemAdapter.OnIte
                 prevForms.setAdapter(formItemAdapter);
             }
         });
+    }
+
+    public void FetchArticles(){
+        CollectionReference colRef = db.collection("Articles");
+        colRef.get().addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                for(QueryDocumentSnapshot document : task.getResult()){
+                    String imgURL = document.getString("imgURL");
+                    String articleURL = document.getString("articleURL");
+                    articlesModelList.add(new ArticlesModel(articleURL, imgURL));
+                }
+            }
+            ArticlesAdapter articlesAdapter = new ArticlesAdapter(articlesModelList, this);
+            articles.setAdapter(articlesAdapter);
+        });
+
+    }
+
+    public void FetchVideos(){
+        CollectionReference colRef = db.collection("Videos");
+        colRef.get().addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                for(QueryDocumentSnapshot document : task.getResult()){
+                    String imgURL = document.getString("imgURL");
+                    String videoURL = document.getString("videoURL");
+                    videoModelList.add(new VideoModel(videoURL, imgURL));
+                }
+            }
+            VideosAdapter videosAdapter = new VideosAdapter(videoModelList, this);
+            videos.setAdapter(videosAdapter);
+        });
+
     }
 }

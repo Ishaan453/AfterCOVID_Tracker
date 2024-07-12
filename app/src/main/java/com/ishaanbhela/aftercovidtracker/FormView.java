@@ -17,6 +17,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldPath;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 import java.util.Objects;
 
@@ -28,7 +29,7 @@ public class FormView extends AppCompatActivity {
     private TextView nauseaLossAppetiteTextView, abdominalDiscomfortTextView, cough_with_breathlessness, restlessness;
     private TextView severe_cough_with_breathlessness, chest_pain, confusion, foggy_thoughts, dizziness, heart_rate, respiratory_rate, spo2;
     private EditText advise;
-    private TextView adviseHead;
+    private TextView adviseHead, givenBy;
     private Button submitAdvise;
 
     FirebaseAuth auth;
@@ -66,18 +67,23 @@ public class FormView extends AppCompatActivity {
         advise = findViewById(R.id.advise);
         adviseHead = findViewById(R.id.AdviseHeading);
         submitAdvise = findViewById(R.id.submitAdvise);
+        givenBy = findViewById(R.id.givenBy);
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        String documentId = getIntent().getStringExtra("documentId");
-        String isDoc = getIntent().getStringExtra("isDoc");
+        // Getting Information from Previous Intent
+        String documentId = getIntent().getStringExtra("documentId"); // To Display the document
+        String isDoc = getIntent().getStringExtra("isDoc"); // To check if Doctor visited or Patient
+
+        // If Doctor Visited, let EditText be enabled and set visibility of Submit button to VISIBLE.
         if(isDoc.equals("true")){
             adviseHead.setText("Give Advise");
             advise.setEnabled(true);
             advise.setBackgroundResource(R.drawable.edit_text_background);
             submitAdvise.setVisibility(View.VISIBLE);
         }
+        // ELSE disable EditText and make the button invisible
         else{
             adviseHead.setText("Advise");
             advise.setEnabled(false);
@@ -88,6 +94,7 @@ public class FormView extends AppCompatActivity {
         assert documentId != null;
         DocumentReference docRef = db.collection("Forms").document(documentId);
 
+        // Getting every detail inside the FORM
         docRef.get().addOnSuccessListener(documentSnapshot -> {
             if(documentSnapshot.exists()){
                 nameTextView.setText("Name of the Patient:\n" + documentSnapshot.getString("Name"));
@@ -113,10 +120,14 @@ public class FormView extends AppCompatActivity {
                 heart_rate.setText("Heart Rate:\n" + documentSnapshot.getString("Heart Rate"));
                 respiratory_rate.setText("Respiratory Rate:\n" + documentSnapshot.getString("Respiratory Rate"));
                 spo2.setText("SpO2:\n" + documentSnapshot.getString("Spo2"));
+
+                // If Advise given, display it.
                 if(Objects.equals(documentSnapshot.getString("Advised"), "true")){
                     advise.setText(documentSnapshot.getString("Advise"));
+                    givenBy.setText("Advise Given By : Dr. " + documentSnapshot.getString("AdviseGivenBy"));
                     advise.setEnabled(false);
                 }
+                // Display appropriate text if Advise is still not given.
                 else{
                     if(isDoc.equals("false")){
                         advise.setText("Advise not given yet. Please check later");
@@ -125,6 +136,8 @@ public class FormView extends AppCompatActivity {
                         advise.setHint("Give Advise");
                     }
                 }
+
+
             }
         });
 
@@ -134,15 +147,24 @@ public class FormView extends AppCompatActivity {
                 return;
             }
 
+
             DocumentReference doc = db.collection("Forms").document(documentId);
             doc.get().addOnSuccessListener(documentSnapshot -> {
+                // IF two or more doctors are giving advise at the same time. Dont Allow.
                if(documentSnapshot.getString("Advised").equals("true")){
                    Toast.makeText(this, "Advise Already Given", Toast.LENGTH_SHORT).show();
                    return;
                }
 
+                // Update the necessary fields when Advise given.
                 doc.update("Advised", "true");
                 doc.update("Advise", advise.getText().toString());
+
+                // Adding Doctor's Name
+                db.collection("users").document(auth.getCurrentUser().getUid()).get().addOnSuccessListener(documentSnapshot1 -> {
+                    doc.update("AdviseGivenBy", documentSnapshot1.getString("name"));
+                });
+
                 Toast.makeText(this, "Advise given successfully", Toast.LENGTH_SHORT).show();
             });
             finish();

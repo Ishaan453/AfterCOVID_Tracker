@@ -264,6 +264,15 @@
                 android:layout_marginBottom="16dp"
                 android:text=""/>
 
+            <TextView
+                android:id="@+id/givenBy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Advise Given By: ?"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"/>
+
             <Button
                 android:id="@+id/submitAdvise"
                 android:layout_width="wrap_content"
