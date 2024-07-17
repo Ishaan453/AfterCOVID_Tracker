@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="16dp"
-        android:background="@color/white">
+        android:background="#FFFFE0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +30,8 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/name"
@@ -40,7 +41,8 @@
                 android:textColorHint="#666362"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/edit_text_background"/>
 
             <EditText
                 android:id="@+id/locality"
@@ -50,7 +52,8 @@
                 android:inputType="text"
                 android:textColor="@color/black"
                 android:textColorHint="#666362"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/edit_text_background"/>
 
             <EditText
                 android:id="@+id/contact_number"
@@ -60,144 +63,169 @@
                 android:inputType="phone"
                 android:textColor="@color/black"
                 android:textColorHint="#666362"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/edit_text_background"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Gender"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp"
+                android:background="@drawable/question_back" />
             <RadioGroup
                 android:id="@+id/gender"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Male"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Female"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Age"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/age"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
                     android:text="Below 45 years"
                     android:textColor="@color/black"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
                     android:text="Above 45 years"
                     android:textColor="@color/black"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Diabetic"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/diabetic"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hypersensitive"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/hypersensitive"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Coronary Artery Disease"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/cad"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Years of suffering from Diabetes/Hypertension"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/years_of_suffering"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Less than 2 years"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="More than 2 years"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <!-- Mild Symptoms of Post COVID Complications -->
@@ -211,95 +239,111 @@
                 android:layout_marginTop="16dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cough alone"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/cough_alone"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Chronic fatigue after recovery from the COVID-19 infection"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/chronic_fatigue"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nausea and Loss of appetite"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                android:layout_marginTop="16dp"/>
+                android:background="@drawable/question_back"
+                android:layout_marginTop="16dp" />
             <RadioGroup
                 android:id="@+id/nausea_loss_appetite"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Abdominal Discomfort"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/abdominal_discomfort"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <!-- Moderate Symptoms of Post COVID Complications -->
@@ -313,49 +357,57 @@
                 android:layout_marginTop="16dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cough with Breathlessness"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp"
+                android:background="@drawable/question_back"/>
             <RadioGroup
                 android:id="@+id/cough_breathlessness"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Restlessness, Sweating, and Numbness in extremities"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/restlessness"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <!-- Severe Symptoms of Post COVID Complications -->
@@ -369,192 +421,225 @@
                 android:layout_marginTop="16dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cough with Breathlessness"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/severe_cough_breathlessness"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Chest Pain, and Breathlessness with Palpitations"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/chest_pain"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Confusion with thoughts"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/confusion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Foggy thoughts"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/foggy_thoughts"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Dizziness"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/dizziness"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Heart Rate"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/heart_rate"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Between 60-100 BPM"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Below 60 BPM"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Above 100 BPM"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Respiratory Rate"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/respiratory_rate"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12-16 BRPM"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Above 16 BRPM"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SpO2"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:background="@drawable/question_back"
                 android:layout_marginTop="16dp"/>
             <RadioGroup
                 android:id="@+id/spo2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_back">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Above 94%"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Below 94%"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="5dp"/>
             </RadioGroup>
 
             <Button
