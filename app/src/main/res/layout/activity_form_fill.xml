@@ -15,7 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="16dp"
-        android:background="#FFFFE0">
+        android:background="#FFFFE0"
+        tools:ignore="HardcodedText">
 
         <LinearLayout
             android:layout_width="match_parent"
